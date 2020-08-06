@@ -1,15 +1,14 @@
 <template>
   <div>
     <h1>Event Listing</h1>
-    <router-link :to="{ name: 'event-show', params: { id: '1' } }">
-      Showing event #1
-    </router-link>
+    <EventCard />
   </div>
 </template>
 
 <script>
+import EventCard from "../components/EventCard";
 export default {
-  name: "EventList"
+  components: { EventCard }
 };
 </script>
 
