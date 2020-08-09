@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="icon-wrapper" v-html="svg"></div>
-    <slot></slot>
+    <slot name="label"></slot>
   </div>
 </template>
 
