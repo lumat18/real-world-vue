@@ -86,6 +86,7 @@ export default {
     },
     createEvent() {
       this.$store.dispatch("createEvent", this.event);
+      this.event = this.createNewEvent();
     }
   }
 };
