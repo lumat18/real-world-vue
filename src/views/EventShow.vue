@@ -31,8 +31,9 @@
 </template>
 
 <script>
-import EventService from "../services/EventService";
 import BaseIcon from "../components/BaseIcon";
+import { mapState } from "vuex";
+
 export default {
   components: { BaseIcon },
   props: {
@@ -40,19 +41,11 @@ export default {
       type: Number
     }
   },
-  data() {
-    return {
-      event: {}
-    };
+  computed: {
+    ...mapState(["event"])
   },
   created() {
-    EventService.getEvent(this.id)
-      .then(response => {
-        this.event = response.data;
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    this.$store.dispatch("fetchEvent", this.id);
   }
 };
 </script>

@@ -17,7 +17,8 @@ export default new Vuex.Store({
       "community"
     ],
     events: [],
-    totalCount: 1
+    totalCount: 0,
+    event: ""
   },
   mutations: {
     ADD_EVENT(state, event) {
@@ -28,6 +29,9 @@ export default new Vuex.Store({
     },
     SET_TOTAL_COUNT(state, totalCount) {
       state.totalCount = totalCount;
+    },
+    SET_EVENT(state, event) {
+      state.event = event;
     }
   },
   actions: {
@@ -45,6 +49,20 @@ export default new Vuex.Store({
         .catch(error => {
           console.log(error.response);
         });
+    },
+    fetchEvent({ commit, getters }, id) {
+      let event = getters.getEventById(id);
+      if (event) {
+        commit("SET_EVENT", event);
+      } else {
+        EventService.getEvent(id)
+          .then(response => {
+            commit("SET_EVENT", response.data);
+          })
+          .catch(error => {
+            console.log(error);
+          });
+      }
     }
   },
   getters: {
