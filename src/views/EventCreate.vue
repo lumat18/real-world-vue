@@ -40,7 +40,7 @@ export default {
   },
   methods: {
     incrementCount() {
-      this.$store.commit("INCREMENT_COUNT", this.incrementBy);
+      this.$store.dispatch("updateCount", this.incrementBy);
     }
   }
 };
