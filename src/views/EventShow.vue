@@ -24,7 +24,7 @@
         :key="index"
         class="list-item"
       >
-        <b>{{ attendee.name }}</b>
+        <b>{{ attendee }}</b>
       </li>
     </ul>
   </div>
@@ -42,7 +42,9 @@ export default {
     }
   },
   computed: {
-    ...mapState(["event"])
+    ...mapState({
+      event: state => state.event.event
+    })
   },
   created() {
     this.$store.dispatch("fetchEvent", this.id);

@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Event for {{ user.user.name }}</h1>
-    <EventCard v-for="event in events" :key="event.id" :event="event" />
+    <EventCard v-for="event in event.events" :key="event.id" :event="event" />
     <template v-if="page != 1">
       <router-link
         :to="{ name: 'event-list', query: { page: page - 1 } }"
@@ -33,12 +33,12 @@ export default {
     });
   },
   computed: {
-    ...mapState(["events", "user"]),
+    ...mapState(["event", "user"]),
     page() {
       return parseInt(this.$route.query.page) || 1;
     },
     isNextPage() {
-      return this.$store.state.totalCount > this.page * 3;
+      return this.event.totalCount > this.page * 3;
     }
   }
 };
