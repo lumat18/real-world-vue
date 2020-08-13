@@ -32,7 +32,7 @@
 
 <script>
 import BaseIcon from "../components/BaseIcon";
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 
 export default {
   components: { BaseIcon },
@@ -47,7 +47,13 @@ export default {
     })
   },
   created() {
-    this.$store.dispatch("fetchEvent", this.id);
+    //this.$store.dispatch("event/fetchEvent", this.id);
+    this.fetchEvent(this.id);
+  },
+  methods: {
+    ...mapActions({
+      fetchEvent: "event/fetchEvent"
+    })
   }
 };
 </script>
