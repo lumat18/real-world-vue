@@ -28,7 +28,7 @@ export default {
         commit("ADD_EVENT", event);
       });
     },
-    fetchEvents({ commit }, { perPage, page }) {
+    fetchEvents({ commit, dispatch }, { perPage, page }) {
       EventService.getEvents(perPage, page)
         .then(response => {
           commit("SET_EVENTS", response.data);
@@ -36,9 +36,14 @@ export default {
         })
         .catch(error => {
           console.log(error.response);
+          const notification = {
+            type: "error",
+            message: "There was an error fethcing events: " + error.message
+          };
+          dispatch("notification/add", notification, { root: true });
         });
     },
-    fetchEvent({ commit, getters }, id) {
+    fetchEvent({ commit, getters, dispatch }, id) {
       let event = getters.getEventById(id);
       if (event) {
         commit("SET_EVENT", event);
@@ -48,7 +53,11 @@ export default {
             commit("SET_EVENT", response.data);
           })
           .catch(error => {
-            console.log(error);
+            const notification = {
+              type: "error",
+              message: "There was an error fetching the event: " + error.message
+            };
+            dispatch("notification/add", notification, { root: true });
           });
       }
     }
