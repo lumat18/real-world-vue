@@ -1,13 +1,15 @@
 <template>
   <div id="app">
     <NavBar />
+    <NotificationContainer />
     <router-view :key="$route.fullPath" />
   </div>
 </template>
 <script>
 import NavBar from "./components/NavBar";
+import NotificationContainer from "./components/NotificationContainer";
 export default {
-  components: { NavBar }
+  components: { NavBar, NotificationContainer }
 };
 </script>
 <style>
@@ -94,6 +96,9 @@ small {
 }
 .-text-error {
   color: tomato;
+}
+.-text-success {
+  color: #39b982;
 }
 .-text-gray {
   color: rgba(0, 0, 0, 0.5);
