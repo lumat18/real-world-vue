@@ -32,7 +32,9 @@
 
 <script>
 import BaseIcon from "../components/BaseIcon";
-import { mapState, mapActions } from "vuex";
+import { mapState } from "vuex";
+import NProgress from "nprogress";
+import store from "../store/index";
 
 export default {
   components: { BaseIcon },
@@ -41,18 +43,16 @@ export default {
       type: Number
     }
   },
+  beforeRouteEnter(routeTo, routeFrom, next) {
+    NProgress.start();
+    store.dispatch("event/fetchEvent", routeTo.params.id).then(() => {
+      NProgress.done();
+      next();
+    });
+  },
   computed: {
     ...mapState({
       event: state => state.event.event
-    })
-  },
-  created() {
-    //this.$store.dispatch("event/fetchEvent", this.id);
-    this.fetchEvent(this.id);
-  },
-  methods: {
-    ...mapActions({
-      fetchEvent: "event/fetchEvent"
     })
   }
 };
