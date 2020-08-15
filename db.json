@@ -51,6 +51,120 @@
           "name": "Sarah"
         }
       ]
+    },
+    {
+      "id": 145846,
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "category": "nature",
+      "title": "Hauward",
+      "description": "Dog trenning",
+      "location": "Gdańsk, Zabianka",
+      "date": "2020-08-13T10:10:00.000Z",
+      "time": "8:00",
+      "attendees": []
+    },
+    {
+      "id": 771027,
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "category": "food",
+      "title": "Lunch",
+      "description": "I have to eat a lunch",
+      "location": "New hot-dog place",
+      "date": "2020-08-12T10:21:00.000Z",
+      "time": "13:00",
+      "attendees": []
+    },
+    {
+      "id": 671905,
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "category": "sustainability",
+      "title": "Quick check",
+      "description": "Check if I need a return statement",
+      "location": "Office",
+      "date": "2020-08-12T10:23:00.000Z",
+      "time": "12:00",
+      "attendees": []
+    },
+    {
+      "id": 285112,
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "category": "housing",
+      "title": "Plant watering",
+      "description": "Very important event",
+      "location": "My flat",
+      "date": "2020-08-20T10:29:00.000Z",
+      "time": "22:00",
+      "attendees": []
+    },
+    {
+      "id": 253775,
+      "organizer": {
+        "user": {
+          "id": "abc123",
+          "name": "Adam"
+        }
+      },
+      "category": "education",
+      "title": "Vue Mastery",
+      "description": "Vue.js course",
+      "location": "Spartez Software Office",
+      "date": "2020-08-13T09:28:00.000Z",
+      "time": "11:00",
+      "attendees": []
+    },
+    {
+      "id": 612516,
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "category": "housing",
+      "title": "Sasino trip",
+      "description": "Holidays but learning",
+      "location": "",
+      "date": "2020-08-14T09:30:00.000Z",
+      "time": "8:00",
+      "attendees": []
+    },
+    {
+      "id": 863454,
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "category": "nature",
+      "title": "Cyklo Zulawy",
+      "description": "Cycling competition",
+      "location": "Nowy Dwór Gdański",
+      "date": "2020-08-30T10:38:00.000Z",
+      "time": "8:00",
+      "attendees": []
+    },
+    {
+      "id": 65652,
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "category": "nature",
+      "title": "Sample",
+      "description": "",
+      "location": "",
+      "date": "",
+      "time": "",
+      "attendees": []
     }
   ]
 }
