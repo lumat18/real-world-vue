@@ -32,19 +32,14 @@
 
 <script>
 import BaseIcon from "../components/BaseIcon";
-import { mapState } from "vuex";
 
 export default {
   components: { BaseIcon },
   props: {
-    id: {
-      type: Number
+    event: {
+      type: Object,
+      required: true
     }
-  },
-  computed: {
-    ...mapState({
-      event: state => state.event.event
-    })
   }
 };
 </script>
