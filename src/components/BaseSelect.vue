@@ -1,20 +1,32 @@
 <template>
   <div>
     <label v-if="label">{{ label }}</label>
-    <input :value="value" @input="updateValue" v-bind="$attrs" />
+    <select :value="value" @input="updateValue" v-bind="$attrs">
+      <option
+        v-for="option in options"
+        :selected="option === value"
+        :key="option"
+      >
+        {{ option }}
+      </option>
+    </select>
   </div>
 </template>
 
 <script>
 export default {
-  name: "BaseInput.vue",
+  name: "BaseSelect",
   inheritAttrs: false,
   props: {
     label: {
       type: String,
       default: ""
     },
-    value: [String, Number]
+    options: {
+      type: Array,
+      required: true
+    },
+    value: [String]
   },
   methods: {
     updateValue(event) {
