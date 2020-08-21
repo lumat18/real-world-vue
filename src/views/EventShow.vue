@@ -31,10 +31,7 @@
 </template>
 
 <script>
-import BaseIcon from "../components/BaseIcon";
-
 export default {
-  components: { BaseIcon },
   props: {
     event: {
       type: Object,
