@@ -165,6 +165,20 @@
       "date": "",
       "time": "",
       "attendees": []
+    },
+    {
+      "id": 768411,
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "category": "nature",
+      "title": "Puppy play",
+      "description": "puppies like to play a lot",
+      "location": "Everywhere",
+      "date": "2020-08-21T09:08:00.000Z",
+      "time": "0:00",
+      "attendees": []
     }
   ]
 }
