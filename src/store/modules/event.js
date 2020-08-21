@@ -52,29 +52,21 @@ export default {
           console.log(error.response);
           const notification = {
             type: "error",
-            message: "There was an error fethcing events: " + error.message
+            message: "There was an error fetching events: " + error.message
           };
           dispatch("notification/add", notification, { root: true });
         });
     },
-    fetchEvent({ commit, getters, dispatch }, id) {
+    fetchEvent({ commit, getters }, id) {
       let event = getters.getEventById(id);
       if (event) {
         commit("SET_EVENT", event);
         return event;
       } else {
-        return EventService.getEvent(id)
-          .then(response => {
-            commit("SET_EVENT", response.data);
-            return response.data;
-          })
-          .catch(error => {
-            const notification = {
-              type: "error",
-              message: "There was an error fetching the event: " + error.message
-            };
-            dispatch("notification/add", notification, { root: true });
-          });
+        return EventService.getEvent(id).then(response => {
+          commit("SET_EVENT", response.data);
+          return response.data;
+        });
       }
     }
   },
