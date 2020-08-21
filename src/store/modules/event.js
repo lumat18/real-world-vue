@@ -42,20 +42,11 @@ export default {
           throw error;
         });
     },
-    fetchEvents({ commit, dispatch, state }, { page }) {
-      return EventService.getEvents(state.perPage, page)
-        .then(response => {
-          commit("SET_EVENTS", response.data);
-          commit("SET_TOTAL_COUNT", response.headers["x-total-count"]);
-        })
-        .catch(error => {
-          console.log(error.response);
-          const notification = {
-            type: "error",
-            message: "There was an error fetching events: " + error.message
-          };
-          dispatch("notification/add", notification, { root: true });
-        });
+    fetchEvents({ commit, state }, { page }) {
+      return EventService.getEvents(state.perPage, page).then(response => {
+        commit("SET_EVENTS", response.data);
+        commit("SET_TOTAL_COUNT", response.headers["x-total-count"]);
+      });
     },
     fetchEvent({ commit, getters }, id) {
       let event = getters.getEventById(id);

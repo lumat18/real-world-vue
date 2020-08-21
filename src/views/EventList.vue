@@ -27,11 +27,15 @@ import store from "../store/index";
 
 function getPageEvents(routeTo, next) {
   const currentPage = parseInt(routeTo.query.page) || 1;
-  console.log("currentPage: " + currentPage);
-  store.dispatch("event/fetchEvents", { page: currentPage }).then(() => {
-    routeTo.params.page = currentPage;
-    next();
-  });
+  store
+    .dispatch("event/fetchEvents", { page: currentPage })
+    .then(() => {
+      routeTo.params.page = currentPage;
+      next();
+    })
+    .catch(() => {
+      next({ name: "network-issue" });
+    });
 }
 
 export default {
