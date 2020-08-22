@@ -5,6 +5,7 @@ import EventShow from "../views/EventShow";
 import EventCreate from "../views/EventCreate";
 import NotFound from "../components/NotFound";
 import NetworkIssue from "../components/NetworkIssue";
+import Example from "../views/Example";
 import NProgress from "nprogress";
 import store from "../store/index";
 
@@ -53,6 +54,11 @@ const routes = [
     path: "/network-issue",
     name: "network-issue",
     component: NetworkIssue
+  },
+  {
+    path: "/example",
+    name: "example",
+    component: Example
   },
   {
     path: "*",
