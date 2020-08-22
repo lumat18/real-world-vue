@@ -221,6 +221,38 @@
       "date": "",
       "time": "",
       "attendees": []
+    },
+    {
+      "id": 318427,
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "category": {
+        "isTrusted": true
+      },
+      "title": "Puppy Play Date",
+      "description": "Little puppies will play together",
+      "location": "Park",
+      "date": "2020-08-04T14:02:00.000Z",
+      "time": {
+        "isTrusted": true
+      },
+      "attendees": []
+    },
+    {
+      "id": 301520,
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "category": "animal welfare",
+      "title": "Puppy promenade",
+      "description": "sdsgld",
+      "location": "Warsaw",
+      "date": "2020-08-08T14:43:00.000Z",
+      "time": "5:00",
+      "attendees": []
     }
   ]
 }
