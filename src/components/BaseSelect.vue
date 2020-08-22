@@ -5,7 +5,7 @@
       :value="value"
       @input="updateValue"
       v-bind="$attrs"
-      v-on="$listeners"
+      v-on="listeners"
       :class="inputClass"
     >
       <option
@@ -34,6 +34,14 @@ export default {
     },
     value: [String],
     inputClass: [String]
+  },
+  computed: {
+    listeners() {
+      return {
+        ...this.$listeners,
+        input: this.updateValue
+      };
+    }
   },
   methods: {
     updateValue(event) {
